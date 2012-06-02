@@ -118,7 +118,7 @@
     $out_file = fopen("document.pdf", "wb");
     $client->convertURI("http://www.editage.com", $out_file);
     fclose($out_file);
-*/
+
     // File direct download example
 
       try
@@ -143,10 +143,10 @@
           echo "SprintPDF Error: " . $e->getMessage();
       }
 
-  //  Get user information example
+    //  Get user information example
 
-      // $client = new sprintPDF("admin", "coldcold");
-      // $info =  $client->getInfo();
-      // print_r($info);
-
+      $client = new sprintPDF("admin", "coldcold");
+      $info =  $client->getInfo();
+      print_r($info);
+    */
 ?>
