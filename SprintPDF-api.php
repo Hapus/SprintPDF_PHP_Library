@@ -52,7 +52,7 @@
           $ch = curl_init();    // create curl resource
           switch ($method) {
             case 'POST':
-                $curlOpts[CURLOPT_TIMEOUT] = 40;
+                $curlOpts[CURLOPT_TIMEOUT] = 90;
                 $curlOpts[CURLOPT_POSTFIELDS] = $this->parameters;
                 curl_setopt_array($ch, $curlOpts);
               break;
@@ -111,42 +111,4 @@
 
       }
 
-    /***
-    * Save to file example
-
-    $client = new sprintPDF("admin", "coldcold");
-    $out_file = fopen("document.pdf", "wb");
-    $client->convertURI("http://www.editage.com", $out_file);
-    fclose($out_file);
-
-    // File direct download example
-
-      try
-      {
-          // create an API client instance
-          $client = new sprintPDF("admin", "coldcold");
-
-          // convert a web page and store the generated PDF into a $pdf variable
-          $pdf = $client->convertURI('http://www.google.co.kr/',null," --orientation Landscape ");
-
-          // set HTTP response headers
-          header("Content-Type: application/pdf");
-          header("Cache-Control: no-cache");
-          header("Accept-Ranges: none");
-          //header("Content-Disposition: attachment; filename=\"google_com.pdf\"");
-
-          // send the generated PDF
-          echo $pdf;
-      }
-      catch(sprintPDFException $e)
-      {
-          echo "SprintPDF Error: " . $e->getMessage();
-      }
-
-    //  Get user information example
-
-      $client = new sprintPDF("admin", "coldcold");
-      $info =  $client->getInfo();
-      print_r($info);
-    */
 ?>
